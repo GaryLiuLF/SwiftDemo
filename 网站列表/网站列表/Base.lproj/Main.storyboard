@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8GE-lX-fyQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--网站列表-->
+        <scene sceneID="QuO-Td-fp2">
+            <objects>
+                <tableViewController id="VJH-Fo-i8m" customClass="WebsiteListVC" customModule="网站列表" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eWU-45-AXi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellId" textLabel="u9n-z5-g5Q" style="IBUITableViewCellStyleDefault" id="ebq-ZM-6bC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebq-ZM-6bC" id="Mc1-kz-tBi">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u9n-z5-g5Q">
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VJH-Fo-i8m" id="wZU-IH-r5U"/>
+                            <outlet property="delegate" destination="VJH-Fo-i8m" id="d9N-dw-tlU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="网站列表" id="RGO-QT-Csb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="m6k-ha-mzg">
+                            <connections>
+                                <action selector="addWebsiteAction:" destination="VJH-Fo-i8m" id="shX-en-dZm"/>
+                                <segue destination="KgB-Uw-Lzn" kind="show" identifier="addWebsite" id="NSg-EC-qc7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="GGS-Uv-rCG" kind="show" identifier="websiteDetail" id="Vgi-jT-8kQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIk-zM-Hkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4311" y="-90"/>
+        </scene>
+        <!--添加网站-->
+        <scene sceneID="K7c-Su-sK7">
+            <objects>
+                <tableViewController id="KgB-Uw-Lzn" customClass="AddWebsiteVC" customModule="网站列表" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kid-iW-pFG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="eEg-Dj-rKY">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="s6t-1d-Dj2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s6t-1d-Dj2" id="qmj-Lo-dxb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入网站名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wM-4x-KW6">
+                                                    <rect key="frame" x="8" y="7" width="359" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6wM-4x-KW6" firstAttribute="leading" secondItem="qmj-Lo-dxb" secondAttribute="leading" constant="8" id="Awr-Yt-bfP"/>
+                                                <constraint firstItem="6wM-4x-KW6" firstAttribute="centerY" secondItem="qmj-Lo-dxb" secondAttribute="centerY" id="Ind-dL-dzN"/>
+                                                <constraint firstAttribute="trailing" secondItem="6wM-4x-KW6" secondAttribute="trailing" constant="8" id="keb-nq-bhc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ES7-fy-JDc">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ES7-fy-JDc" id="hU4-fg-p1i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入网站IP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4fj-Nx-V9i">
+                                                    <rect key="frame" x="8" y="7" width="359" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="4fj-Nx-V9i" secondAttribute="trailing" constant="8" id="B1x-JB-C9n"/>
+                                                <constraint firstItem="4fj-Nx-V9i" firstAttribute="centerY" secondItem="hU4-fg-p1i" secondAttribute="centerY" id="HtD-yG-rZZ"/>
+                                                <constraint firstItem="4fj-Nx-V9i" firstAttribute="leading" secondItem="hU4-fg-p1i" secondAttribute="leading" constant="8" id="JS4-ep-wzy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="KgB-Uw-Lzn" id="Vl4-AQ-XzT"/>
+                            <outlet property="delegate" destination="KgB-Uw-Lzn" id="sj3-Po-6t1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="添加网站" id="8Wy-Nq-wE2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pkn-BX-Kmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3522" y="-486"/>
+        </scene>
+        <!--网站名-->
+        <scene sceneID="uge-Pz-fiW">
+            <objects>
+                <viewController id="GGS-Uv-rCG" customClass="WebsiteDetailVC" customModule="网站列表" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mks-EU-Ir6"/>
+                        <viewControllerLayoutGuide type="bottom" id="AHe-EW-YA6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y02-3J-er5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="网站名" id="7FS-0e-8W6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T7G-Xh-It2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3522" y="296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ci1-TF-XYD">
+            <objects>
+                <navigationController id="8GE-lX-fyQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AIM-UI-Md7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VJH-Fo-i8m" kind="relationship" relationship="rootViewController" id="Mda-qC-TUc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYs-Vh-SbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5058" y="-90"/>
+        </scene>
+    </scenes>
+</document>
