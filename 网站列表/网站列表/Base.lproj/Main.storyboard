@@ -22,11 +22,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebq-ZM-6bC" id="Mc1-kz-tBi">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u9n-z5-g5Q">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -118,7 +118,17 @@
                             <outlet property="delegate" destination="KgB-Uw-Lzn" id="sj3-Po-6t1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="添加网站" id="8Wy-Nq-wE2"/>
+                    <navigationItem key="navigationItem" title="添加网站" id="8Wy-Nq-wE2">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="pcA-gK-CxQ">
+                            <connections>
+                                <action selector="saveAction:" destination="KgB-Uw-Lzn" id="Gc7-k7-6X3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="siteTf" destination="4fj-Nx-V9i" id="pAM-Mb-zXU"/>
+                        <outlet property="webNameTf" destination="6wM-4x-KW6" id="usD-Gl-Ccx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkn-BX-Kmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +157,7 @@
         <scene sceneID="ci1-TF-XYD">
             <objects>
                 <navigationController id="8GE-lX-fyQ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AIM-UI-Md7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AIM-UI-Md7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

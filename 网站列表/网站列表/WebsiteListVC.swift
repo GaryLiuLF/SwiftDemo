@@ -75,7 +75,13 @@ class WebsiteListVC: UITableViewController {
                 vc.website = websiteList[indexPath.row]
             }
         }
-        
+        else if segue.identifier == "addWebsite" {
+            let vc = segue.destination as! AddWebsiteVC
+            vc.completionBlock = { (newWebsite) in
+                self.websiteList.insert(newWebsite, at: 0)
+            }
+            tableView.reloadData()
+        }
         
     }
     
